@@ -8,20 +8,34 @@ public class Continha {
     private int algarismosDividendo;
     private int algarismosDivisor;
 
+    public Continha() {
+    }
+
     public Continha(int algarismosDividendo, int algarismosDivisor, int resto) {
         this.algarismosDividendo = algarismosDividendo;
         this.algarismosDivisor = algarismosDivisor;
         this.resto = resto;
     }
 
-    public int generateDividendo() {
+    public void generateDividendo() {
         Random gerador = new Random();
-        return (int) (Math.pow(10, algarismosDividendo - 1) + gerador.nextInt((int) Math.pow(10, algarismosDividendo)));
+        dividendo = (int) (Math.pow(10, algarismosDividendo - 1) + gerador.nextInt((int) ((int) Math.pow(10, algarismosDividendo) - (Math.pow(10, algarismosDividendo - 1)))));
     }
 
-    public int generateDivisor() {
+    public void generateDivisor() {
         Random gerador = new Random();
-        return (int) (Math.pow(10, algarismosDivisor - 1) + gerador.nextInt((int) Math.pow(10, algarismosDivisor)));
+
+        do {
+            divisor = (int) Math.pow(10, algarismosDivisor - 1) + gerador.nextInt((int) ((int) Math.pow(10, algarismosDivisor) - Math.pow(10, algarismosDivisor - 1)));
+        }while (divisor == 0);
+    }
+
+    public void generateCalculo() {
+        int result = 0;
+        do {
+            generateDividendo();
+            generateDivisor();
+        } while(dividendo%divisor != resto);
     }
 
     public int getAlgarismosDividendo() {
@@ -67,11 +81,8 @@ public class Continha {
     @Override
     public String toString() {
         return "Continha{" +
-                "dividendo=" + dividendo +
+                "dividendo = " + dividendo +
                 ", divisor=" + divisor +
-                ", resto=" + resto +
-                ", algarismosDividendo=" + algarismosDividendo +
-                ", algarismosDivisor=" + algarismosDivisor +
                 '}';
     }
 }

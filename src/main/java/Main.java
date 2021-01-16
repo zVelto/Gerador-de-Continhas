@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        Continha continha = new Continha(5, 1, 0);
-        System.out.println(continha.generateDividendo());
-        System.out.println(continha.generateDivisor());
+        Continha continha = new Continha(5, 4, 0);
+        continha.generateCalculo();
+        System.out.println(continha);
     }
 }
