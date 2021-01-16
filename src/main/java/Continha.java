@@ -19,6 +19,11 @@ public class Continha {
         return (int) (Math.pow(10, algarismosDividendo - 1) + gerador.nextInt((int) Math.pow(10, algarismosDividendo)));
     }
 
+    public int generateDivisor() {
+        Random gerador = new Random();
+        return (int) (Math.pow(10, algarismosDivisor - 1) + gerador.nextInt((int) Math.pow(10, algarismosDivisor)));
+    }
+
     public int getAlgarismosDividendo() {
         return algarismosDividendo;
     }
