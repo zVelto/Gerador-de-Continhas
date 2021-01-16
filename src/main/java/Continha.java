@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Continha {
 
     private int dividendo;
@@ -10,6 +12,11 @@ public class Continha {
         this.algarismosDividendo = algarismosDividendo;
         this.algarismosDivisor = algarismosDivisor;
         this.resto = resto;
+    }
+
+    public int generateDividendo() {
+        Random gerador = new Random();
+        return (int) (Math.pow(10, algarismosDividendo - 1) + gerador.nextInt((int) Math.pow(10, algarismosDividendo)));
     }
 
     public int getAlgarismosDividendo() {
