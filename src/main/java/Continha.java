@@ -15,6 +15,7 @@ public class Continha {
         this.algarismosDividendo = algarismosDividendo;
         this.algarismosDivisor = algarismosDivisor;
         this.resto = resto;
+        generateCalculo();
     }
 
     public void generateDividendo() {
