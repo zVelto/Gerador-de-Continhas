@@ -15,28 +15,58 @@ public class GeradorEValidador {
 
         switch(dificuldade) {
             case 0:
-                algarismosDividendo = (2 + gerador.nextInt(3));
-                dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                algarismosDividendo = (3 + gerador.nextInt(2));
+
+                if (algarismosDividendo == 3) {
+                   do {
+                       dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                   } while(dividendo < 600 || dividendo%10 ==0);
+                } else {
+                    do {
+                        dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                    } while(dividendo < 3000);
+                }
+
                 break;
 
             case 1:
                 algarismosDividendo = (4 + gerador.nextInt(3));
-                dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+
+                if (algarismosDividendo == 4 ) {
+                    do {
+                        dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                    } while (dividendo < 4700);
+                } else if (algarismosDividendo == 5){
+                    do {
+                        dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                    } while (dividendo%10 == 0);
+                } else {
+                    dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                }
+
                 break;
 
             case 2:
                 algarismosDividendo = 6 + gerador.nextInt(2);
-                dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                do {
+                    dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                } while (dividendo%10 == 0);
+
                 break;
 
             case 3:
                 algarismosDividendo = (7 + gerador.nextInt(2));
-                dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                do {
+                    dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                } while (dividendo%10 == 0);
+
                 break;
 
             case 4:
                 algarismosDividendo = (8 + gerador.nextInt(3));
-                dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                do {
+                    dividendo = gerarNumeroPorIntervalo(algarismosDividendo);
+                } while (dividendo%10 == 0);
                 break;
 
             default:
@@ -53,25 +83,51 @@ public class GeradorEValidador {
 
         switch(dificuldade) {
             case 0:
+                algarismosDivisor = 1;
+
+                do {
+                    divisor = gerarEValidarDivisor(algarismosDivisor);
+                } while(divisor < 2 || divisor > 5);
+
+                break;
 
             case 1:
                 algarismosDivisor = 1;
-                divisor = gerarEValidarDivisor(algarismosDivisor);
+
+                do {
+                    divisor = gerarEValidarDivisor(algarismosDivisor);
+                } while(divisor < 6);
+
                 break;
 
             case 2:
-                algarismosDivisor = 1 + gerador.nextInt(2);
-                divisor = gerarEValidarDivisor(algarismosDivisor);
+                algarismosDivisor = 1;
+                do {
+                    divisor = gerarEValidarDivisor(algarismosDivisor);
+                } while (divisor < 7);
+
                 break;
 
             case 3:
-                algarismosDivisor = 2 + gerador.nextInt(2);
-                divisor = gerarEValidarDivisor(algarismosDivisor);
+                algarismosDivisor = 1 + gerador.nextInt(2);
+                if(algarismosDivisor == 1) {
+                    do {
+                        divisor = gerarEValidarDivisor(algarismosDivisor);
+                    } while (divisor < 8);
+                } else {
+                    do {
+                        divisor = gerarEValidarDivisor(algarismosDivisor);
+                    } while (divisor%10 == 0 || divisor > 20);
+                }
+
                 break;
 
             case 4:
-                algarismosDivisor = 3;
-                divisor = gerarEValidarDivisor(algarismosDivisor);
+                algarismosDivisor = 2;
+                do {
+                    divisor = gerarEValidarDivisor(algarismosDivisor);
+                } while (divisor%10 == 0 || divisor > 35);
+
                 break;
 
             default:
