@@ -8,12 +8,12 @@ public class ContinhaService {
     public ContinhaService() {
     }
 
-    public void GerarLista(int dificuldade, int numContinhas) {
+    public void GerarLista(Dificuldade dificuldade, int numContinhas) {
 
         for(int i = 0; i < numContinhas; i++) {
 
-            int dividendo = GeradorEValidador.gerarDividendo(dificuldade);
-            int divisor = GeradorEValidador.gerarDivisor(dificuldade);
+            int dividendo = Gerador.gerarDividendo(dificuldade.getIntDividendo());
+            int divisor = Gerador.gerarDivisor(dificuldade.getIntDivisor());
 
             list.add(new Continha(dividendo, divisor));
         }

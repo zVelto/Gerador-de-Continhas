@@ -11,7 +11,7 @@ public class Main {
         int dificuldade = scan.nextInt();
 
         ContinhaService service = new ContinhaService();
-        service.GerarLista(dificuldade, numContinhas);
+        service.GerarLista(Dificuldade.toEnum(dificuldade), numContinhas);
         service.imprimirLista();
     }
 }

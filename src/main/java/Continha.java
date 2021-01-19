@@ -21,7 +21,6 @@ public class Continha {
         this.divisor = divisor;
     }
 
-
     public int getDividendo() {
         return dividendo;
     }
