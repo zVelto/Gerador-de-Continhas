@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ContinhaService {
+
+    public static Random gerador = new Random();
 
     private List<Continha> list = new ArrayList<>();
 
@@ -12,11 +15,23 @@ public class ContinhaService {
 
         for(int i = 0; i < numContinhas; i++) {
 
-            int dividendo = Gerador.gerarDividendo(dificuldade.getIntDividendo());
-            int divisor = Gerador.gerarDivisor(dificuldade.getIntDivisor());
+            int dividendo = gerarDividendo(dificuldade.getIntDividendo());
+            int divisor = gerarDivisor(dificuldade.getIntDivisor());
 
             list.add(new Continha(dividendo, divisor));
         }
+    }
+
+    public static int gerarDividendo(Intervalo inter) {
+
+        return inter.getNumMin() + gerador.nextInt(inter.bound());
+
+    }
+
+    public static int gerarDivisor(Intervalo inter) {
+
+        return inter.getNumMin() + gerador.nextInt(inter.bound());
+
     }
 
     public void imprimirLista() {
