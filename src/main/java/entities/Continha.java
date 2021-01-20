@@ -1,4 +1,4 @@
-import java.util.Random;
+package entities;
 
 public class Continha {
 
@@ -33,7 +33,7 @@ public class Continha {
 
     @Override
     public String toString() {
-        return "Continha {" +
+        return "entitites.Continha {" +
                 "dividendo = " + dividendo +
                 ", divisor = " + divisor +
                 ", linhas necessárias = " + linhasNecessarias +

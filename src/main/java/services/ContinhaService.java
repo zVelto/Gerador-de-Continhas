@@ -1,3 +1,9 @@
+package services;
+
+import entities.Continha;
+import entities.Intervalo;
+import enums.Dificuldade;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

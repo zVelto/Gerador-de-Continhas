@@ -1,3 +1,6 @@
+import enums.Dificuldade;
+import services.ContinhaService;
+
 import java.util.Scanner;
 
 public class Main {

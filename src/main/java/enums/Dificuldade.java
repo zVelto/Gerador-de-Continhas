@@ -1,3 +1,7 @@
+package enums;
+
+import entities.Intervalo;
+
 public enum Dificuldade {
 
     MUITO_FACIL(new Intervalo(600, 9999), new Intervalo(2, 5), 0),
@@ -23,7 +27,7 @@ public enum Dificuldade {
             }
         }
 
-        throw new IllegalArgumentException("Dificuldade não encontrada");
+        throw new IllegalArgumentException("enums.Dificuldade não encontrada");
     }
 
     public Intervalo getIntDividendo() {
