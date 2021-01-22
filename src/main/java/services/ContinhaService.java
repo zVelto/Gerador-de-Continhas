@@ -42,7 +42,15 @@ public class ContinhaService {
 
     public void imprimirLista() {
         for (Continha c: list) {
+            System.out.print(list.indexOf(c) + 1 + " - ");
             System.out.println(c);
+        }
+    }
+
+    public void imprimirResposta() {
+        for (Continha c: list) {
+            System.out.print(list.indexOf(c) + 1 + " - ");
+            System.out.println(c.resposta());
         }
     }
 

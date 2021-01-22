@@ -27,7 +27,7 @@ public enum Dificuldade {
             }
         }
 
-        throw new IllegalArgumentException("enums.Dificuldade não encontrada");
+        throw new IllegalArgumentException("Dificuldade não encontrada");
     }
 
     public Intervalo getIntDividendo() {

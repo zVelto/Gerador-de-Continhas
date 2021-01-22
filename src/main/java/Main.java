@@ -16,5 +16,13 @@ public class Main {
         ContinhaService service = new ContinhaService();
         service.GerarLista(Dificuldade.toEnum(dificuldade), numContinhas);
         service.imprimirLista();
+
+        System.out.println();
+        System.out.print("Deseja ver as respostas? (S) ou (N): ");
+        char resp = scan.next().charAt(0);
+
+        if(resp == 'S' || resp == 's') {
+            service.imprimirResposta();
+        }
     }
 }

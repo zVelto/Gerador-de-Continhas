@@ -5,6 +5,8 @@ public class Continha {
     private int dividendo;
     private int divisor;
     private int linhasNecessarias;
+    private int quociente;
+    private int resto;
 
     public Continha() {
     }
@@ -12,7 +14,10 @@ public class Continha {
     public Continha(int dividendo, int divisor) {
         this.dividendo = dividendo;
         this.divisor = divisor;
-        this.linhasNecessarias = (String.valueOf(dividendo / divisor).length() * 2) + 2;
+        this.quociente = dividendo / divisor;
+        this.resto = dividendo % divisor;
+        this.linhasNecessarias = (String.valueOf(quociente).length() * 2) + 2;
+
     }
 
     public int getDivisor() {
@@ -33,10 +38,19 @@ public class Continha {
 
     @Override
     public String toString() {
-        return "entitites.Continha {" +
+        return "{" +
                 "dividendo = " + dividendo +
                 ", divisor = " + divisor +
                 ", linhas necessárias = " + linhasNecessarias +
                 '}';
+    }
+
+    public String resposta() {
+        return new StringBuilder()
+                .append("Quociente = ")
+                .append(quociente)
+                .append(", resto = ")
+                .append(resto)
+                .toString();
     }
 }
