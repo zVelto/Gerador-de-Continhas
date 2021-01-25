@@ -1,28 +1,20 @@
-import enums.Dificuldade;
-import services.ContinhaService;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.util.Scanner;
-
-public class Main {
+public class Main extends Application {
     public static void main(String[] args) {
+        launch(args);
+    }
 
-        Scanner scan = new Scanner(System.in);
-
-        System.out.print("Quantas continhas deverão ser geradas? ");
-        int numContinhas = scan.nextInt();
-        System.out.print("Qual a dificuldade? ");
-        int dificuldade = scan.nextInt();
-
-        ContinhaService service = new ContinhaService();
-        service.GerarLista(Dificuldade.toEnum(dificuldade), numContinhas);
-        service.imprimirLista();
-
-        System.out.println();
-        System.out.print("Deseja ver as respostas? (S) ou (N): ");
-        char resp = scan.next().charAt(0);
-
-        if(resp == 'S' || resp == 's') {
-            service.imprimirResposta();
-        }
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/Inicio.fxml"));
+        Parent root = loader.load();
+        Scene cena = new Scene(root);
+        primaryStage.setScene(cena);
+        primaryStage.show();
     }
 }
