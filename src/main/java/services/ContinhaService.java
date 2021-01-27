@@ -17,7 +17,7 @@ public class ContinhaService {
     public ContinhaService() {
     }
 
-    public void GerarLista(Dificuldade dificuldade, int numContinhas) {
+    public List<Continha> GerarLista(Dificuldade dificuldade, int numContinhas) {
 
         for(int i = 0; i < numContinhas; i++) {
 
@@ -26,6 +26,8 @@ public class ContinhaService {
 
             list.add(new Continha(dividendo, divisor));
         }
+
+        return list;
     }
 
     public static int gerarDividendo(Intervalo inter) {
