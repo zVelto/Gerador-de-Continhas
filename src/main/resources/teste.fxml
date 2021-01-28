@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="127.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <Label cache="true" depthTest="ENABLE" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="30.0" prefWidth="394.0" text="Dividendo: " textFill="#2600ff">
+         <font>
+            <Font name="Calibri" size="25.0" />
+         </font>
+         <opaqueInsets>
+            <Insets bottom="10.0" top="10.0" />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets bottom="2.0" left="10.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      <Label prefHeight="36.0" prefWidth="416.0" text="Divisor: " textFill="RED">
+         <VBox.margin>
+            <Insets bottom="2.0" left="10.0" top="2.0" />
+         </VBox.margin>
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label prefHeight="17.0" prefWidth="394.0" text="Linhas: " textFill="#00ff11">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" top="2.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Calibri" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

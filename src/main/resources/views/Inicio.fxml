@@ -8,9 +8,9 @@
       <Button fx:id="button" layoutX="75.0" layoutY="260.0" mnemonicParsing="false" onAction="#onActionButton" text="Gerar Continhas" />
       <TextField fx:id="text" layoutX="51.0" layoutY="106.0" />
       <ChoiceBox fx:id="choice" layoutX="51.0" layoutY="175.0" prefWidth="150.0" />
-      <ScrollPane layoutX="307.0" prefHeight="400.0" prefWidth="293.0">
+      <ScrollPane layoutX="253.0" prefHeight="400.0" prefWidth="347.0">
          <content>
-            <VBox fx:id="vbox" prefHeight="398.0" prefWidth="291.0" />
+            <VBox fx:id="vbox" prefHeight="398.0" prefWidth="330.0" />
          </content>
       </ScrollPane>
    </children>

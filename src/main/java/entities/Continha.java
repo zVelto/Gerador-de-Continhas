@@ -36,12 +36,20 @@ public class Continha {
         this.dividendo = dividendo;
     }
 
+    public int getLinhasNecessarias() {
+        return linhasNecessarias;
+    }
+
+    public void setLinhasNecessarias(int linhasNecessarias) {
+        this.linhasNecessarias = linhasNecessarias;
+    }
+
     @Override
     public String toString() {
         return "{" +
                 "dividendo = " + dividendo +
                 ", divisor = " + divisor +
-                ", linhas necessárias = " + linhasNecessarias +
+                ", linhas = " + linhasNecessarias +
                 '}';
     }
 
