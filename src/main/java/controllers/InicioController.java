@@ -2,6 +2,7 @@ package controllers;
 
 import entities.Continha;
 import enums.Dificuldade;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -32,11 +33,39 @@ public class InicioController implements Initializable {
     private Button button;
 
     @FXML
+    private Button respostas;
+
+    @FXML
     private VBox vbox;
 
+    private List<Continha> list;
+
     public void onActionButton() throws IOException {
+        vbox.getChildren().clear();
+
         ContinhaService service = new ContinhaService();
-        List<Continha> list = service.GerarLista(choice.getValue(), Integer.parseInt(text.getText()));
+        list = service.GerarLista(choice.getValue(), Integer.parseInt(text.getText()));
+
+        adicionaAoVBox();
+
+        respostas.setDisable(false);
+    }
+
+    public void onActionResposta() {
+        adicionaRespostas();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.choice.getItems().addAll(Arrays.asList(
+                Dificuldade.MUITO_FACIL,
+                Dificuldade.FACIL,
+                Dificuldade.INTERMEDIARIO,
+                Dificuldade.DIFICIL,
+                Dificuldade.MUITO_DIFICIL));
+    }
+
+    public void adicionaAoVBox() throws IOException {
 
         for (Continha c: list) {
             VBox v = FXMLLoader.load(getClass().getResource("/teste.fxml"));
@@ -59,17 +88,34 @@ public class InicioController implements Initializable {
             l3.setText(t3);
             v.getChildren().set(2,l3);
 
+            Label l4 = (Label) v.getChildren().get(3);
+            String t4 = l4.getText();
+            t4 += c.getQuociente();
+            l4.setText(t4);
+            l4.setVisible(false);
+            v.getChildren().set(3,l4);
+
+            Label l5 = (Label) v.getChildren().get(4);
+            String t5 = l5.getText();
+            t5 += c.getResto();
+            l5.setText(t5);
+            l5.setVisible(false);
+            v.getChildren().set(4,l5);
+
             vbox.getChildren().add(v);
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.choice.getItems().addAll(Arrays.asList(
-                Dificuldade.MUITO_FACIL,
-                Dificuldade.FACIL,
-                Dificuldade.INTERMEDIARIO,
-                Dificuldade.DIFICIL,
-                Dificuldade.MUITO_DIFICIL));
+    public void adicionaRespostas() {
+
+        ObservableList<Node> listVbox = vbox.getChildren();
+
+        for (Node n : listVbox) {
+
+            VBox vb = (VBox) n;
+
+            vb.getChildren().get(3).setVisible(true);
+            vb.getChildren().get(4).setVisible(true);
+        }
     }
 }

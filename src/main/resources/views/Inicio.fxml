@@ -13,5 +13,6 @@
             <VBox fx:id="vbox" prefHeight="398.0" prefWidth="330.0" />
          </content>
       </ScrollPane>
+      <Button fx:id="respostas" disable="true" layoutX="92.0" layoutY="319.0" mnemonicParsing="false" onAction="#onActionResposta" text="Respostas" />
    </children>
 </AnchorPane>

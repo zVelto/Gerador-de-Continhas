@@ -44,6 +44,22 @@ public class Continha {
         this.linhasNecessarias = linhasNecessarias;
     }
 
+    public int getQuociente() {
+        return quociente;
+    }
+
+    public void setQuociente(int quociente) {
+        this.quociente = quociente;
+    }
+
+    public int getResto() {
+        return resto;
+    }
+
+    public void setResto(int resto) {
+        this.resto = resto;
+    }
+
     @Override
     public String toString() {
         return "{" +
